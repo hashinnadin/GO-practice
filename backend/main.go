@@ -1,22 +1,55 @@
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	var n int
+
+// 	fmt.Print("Enter number of terms: ")
+// 	fmt.Scanln(&n)
+
+// 	a := 0
+// 	b := 1
+
+// 	fmt.Println("Fibonacci Series:")
+
+// 	for i := 1; i <= n; i++ {
+// 		fmt.Print(a)
+// 		next := a + b
+// 		a = b
+// 		b = next
+// 	}
+// }
+
 package main
 
 import "fmt"
 
 func main() {
-	var n int
+	var nums int
 
-	fmt.Print("Enter number of terms: ")
-	fmt.Scanln(&n)
+	fmt.Println("===== USER CRUD MENU =====")
+	fmt.Println("1. Create User")
+	fmt.Println("2. Read Users")
+	fmt.Println("3. Update User")
+	fmt.Println("4. Delete User")
+	fmt.Println("5. Exit")
 
-	a := 0
-	b := 1
+	fmt.Print("Enter your choice: ")
+	fmt.Scanln(&nums)
 
-	fmt.Println("Fibonacci Series:")
-
-	for i := 1; i <= n; i++ {
-		fmt.Print(a)
-		next := a + b
-		a = b
-		b = next
+	switch nums {
+	case 1:
+		fmt.Println("user created")
+	case 2:
+		fmt.Println("Data receved")
+	case 3:
+		fmt.Println("Edited data")
+	case 4:
+		fmt.Println("deleted data")
+	case 5:
+		fmt.Println("exit")
+	default:
+		fmt.Println("Exited")
 	}
 }
