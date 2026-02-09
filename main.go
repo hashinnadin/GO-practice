@@ -3,33 +3,60 @@
 // import "fmt"
 
 // func main() {
-// 	arr := [...]int{1, 2, 3, 9, 4, 5, 6}
-// 	slice := arr[:]
-// 	slice = append(slice, 7)
-// 	fmt.Println(arr)
-// 	fmt.Println(slice)
+// 	var n int
+
+// 	fmt.Print("Enter number of terms: ")
+// 	fmt.Scanln(&n)
+
+// 	a := 0
+// 	b := 1
+
+// 	fmt.Println("Fibonacci Series:")
+
+// 	for i := 1; i <= n; i++ {
+// 		fmt.Print(a)
+// 		next := a + b
+// 		a = b
+// 		b = next
+// 	}
 // }
 
 // package main
 
-// import "fmt"
+// import (
+// 	dup "arrayslice/Dup"
+// 	"fmt"
+// )
 
 // func main() {
-// 	students := make(map[int]string)
+// 	var nums int
 
-// 	students[1] = "HAshin"
-// 	students[2] = "shaju"
-// 	students[3] = "anu"
-// 	students[4] = "mnu"
-// 	students[5] = "snu"
-// 	students[6] = "lnu"
-// 	students[7] = "Hanan"
+// 	fmt.Println("===== USER CRUD MENU =====")
+// 	fmt.Println("1. Create User")
+// 	fmt.Println("2. Read Users")
+// 	fmt.Println("3. Update User")
+// 	fmt.Println("4. Delete User")
+// 	fmt.Println("5. Exit")
 
-// 	delete(students, 2)
+// 	fmt.Print("Enter your choice: ")
+// 	fmt.Scanln(&nums)
 
-// 	for id, name := range students {
-// 		fmt.Println(id, name)
+// 	switch nums {
+// 	case 1:
+// 		fmt.Println("user created")
+// 	case 2:
+// 		fmt.Println("Data receved")
+// 	case 3:
+// 		fmt.Println("Edited data")
+// 	case 4:
+// 		fmt.Println("deleted data")
+// 	case 5:
+// 		fmt.Println("exit")
+// 	default:
+// 		fmt.Println("Exited")
 // 	}
+
+// 	dup.Duplicate()
 // }
 
 package main
@@ -37,18 +64,14 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{10, 20, 30, 40, 6, 5}
-	max := nums[0]
-	min := nums[0]
-
-	for _, v := range nums {
-		if v > max {
-			max = v
-		}
-		if v < min {
-			min = v
-		}
+	my := map[string]int{
+		"hashin": 6,
+		"nabeel": 10,
+		"manhar": 15,
 	}
-	fmt.Println("MAx :", max)
-	fmt.Println("Min :", min)
+
+	val, ok := my["manhar"]
+	if ok {
+		fmt.Println(val)
+	}
 }
