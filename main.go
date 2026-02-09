@@ -111,13 +111,40 @@
 // 	}
 // }
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	students := []string{}
+// 	students = append(students, "Hashin")
+// 	students = append(students, "Salman")
+// 	fmt.Println(students)
+// }
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	arr := []int{1, 2, 3, 4, 55, 5, 5, 3, 7}
+
+// 	for _, num := range arr {
+// 		fmt.Println(num)
+// 	}
+// }
+
 package main
 
 import "fmt"
 
 func main() {
-	students := []string{}
-	students = append(students, "Hashin")
-	students = append(students, "Salman")
-	fmt.Println(students)
+	students := map[int]string{
+		1: "HAshin",
+		2: "rahul",
+		3: "mahul",
+	}
+	for i, name := range students {
+		fmt.Println("Roll :", i, "Name :", name)
+	}
 }
