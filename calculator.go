@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func aain() {
 	var a, b int
 	var op string
 
