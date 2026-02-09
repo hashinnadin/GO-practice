@@ -59,19 +59,54 @@
 // 	dup.Duplicate()
 // }
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	my := map[string]int{
+// 		"hashin": 6,
+// 		"nabeel": 10,
+// 		"manhar": 15,
+// 	}
+
+//		val, ok := my["manhar"]
+//		if ok {
+//			fmt.Println(val)
+//		}
+//	}
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	nums := []int{1, 2, 2, 3, 4, 4, 5}
+
+// 	unique := []int{}
+// 	seen := make(map[int]bool)
+
+// 	for _, v := range nums {
+// 		if !seen[v] {
+// 			seen[v] = true
+// 			unique = append(unique, v)
+// 		}
+// 	}
+
+// 	fmt.Println("Without duplicates:", unique)
+// }
+
 package main
 
 import "fmt"
 
 func main() {
-	my := map[string]int{
-		"hashin": 6,
-		"nabeel": 10,
-		"manhar": 15,
-	}
+	grades := make(map[string]string)
 
-	val, ok := my["manhar"]
-	if ok {
-		fmt.Println(val)
+	grades["rahul"] = "A"
+	grades["Hashin"] = "A+"
+
+	for name, grade := range grades {
+		fmt.Println(name, ":", grade)
 	}
 }
