@@ -96,17 +96,28 @@
 // 	fmt.Println("Without duplicates:", unique)
 // }
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	grades := make(map[string]string)
+
+// 	grades["rahul"] = "A"
+// 	grades["Hashin"] = "A+"
+
+// 	for name, grade := range grades {
+// 		fmt.Println(name, ":", grade)
+// 	}
+// }
+
 package main
 
 import "fmt"
 
 func main() {
-	grades := make(map[string]string)
-
-	grades["rahul"] = "A"
-	grades["Hashin"] = "A+"
-
-	for name, grade := range grades {
-		fmt.Println(name, ":", grade)
-	}
+	students := []string{}
+	students = append(students, "Hashin")
+	students = append(students, "Salman")
+	fmt.Println(students)
 }
