@@ -395,16 +395,63 @@
 // 	fmt.Println(stu)
 // }
 
+// package main
+
+// import "fmt"
+
+// func change(x *int) {
+// 	*x = 20
+// }
+
+// func main() {
+// 	a := 10
+// 	change(&a)
+// 	fmt.Println(a)
+// }
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"time"
+// )
+
+// func sayHello() {
+// 	fmt.Println("Hello")
+// }
+
+// func main() {
+// 	go sayHello()
+// 	time.Sleep(1 * time.Second)
+// 	fmt.Println("Main done")
+// }
+
+// package main
+
+// import (
+// 	"fmt"
+// )
+
+// func printNum(n int) {
+// 	fmt.Println(n)
+// }
+// func main() {
+// 	for i := 1; i <= 5; i++ {
+// 		go printNum(i)
+// 	}
+// }
+
 package main
 
 import "fmt"
 
-func change(x *int) {
-	*x = 20
+func updateAge(n *int) {
+	*n = 35
 }
 
 func main() {
-	a := 10
-	change(&a)
-	fmt.Println(a)
+	age := 21
+	updateAge(&age)
+
+	fmt.Println(age)
 }
