@@ -279,35 +279,58 @@
 // 	fmt.Println(snacks)
 // }
 
+// package main
+
+// import "fmt"
+
+// type Student struct {
+// 	Name string
+// 	Age  int
+// 	Mark int
+// }
+
+// func (s Student) Greet() {
+// 	fmt.Println("Hello my name is", s.Name)
+// 	fmt.Println("My age is", s.Age)
+// }
+
+// func main() {
+
+// 	persons := []Student{
+// 		{
+// 			Name: "Hashin",
+// 			Age:  21,
+// 		},
+// 		{
+// 			Name: "Rahul",
+// 			Age:  22,
+// 		},
+// 	}
+
+// 	for _, p := range persons {
+// 		p.Greet()
+// 	}
+// }
+
+// struct simple example
+
 package main
 
 import "fmt"
 
 type Student struct {
-	Name string
-	Age  int
-	Mark int
+	name string
+	age  int
 }
 
-func (s Student) Greet() {
-	fmt.Println("Hello my name is", s.Name)
-	fmt.Println("My age is", s.Age)
+func (s Student) Hello() {
+	fmt.Println("My name is ", s.name)
+	fmt.Println("My age is ", s.age)
 }
-
 func main() {
-
-	persons := []Student{
-		{
-			Name: "Hashin",
-			Age:  21,
-		},
-		{
-			Name: "Rahul",
-			Age:  22,
-		},
+	s1 := Student{
+		name: "Hashin",
+		age:  21,
 	}
-
-	for _, p := range persons {
-		p.Greet()
-	}
+	s1.Hello()
 }
