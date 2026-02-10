@@ -441,17 +441,39 @@
 // 	}
 // }
 
+// package main
+
+// import "fmt"
+
+// func updateAge(n *int) {
+// 	*n = 35
+// }
+
+// func main() {
+// 	age := 21
+// 	updateAge(&age)
+
+// 	fmt.Println(age)
+// }
+
 package main
 
 import "fmt"
 
-func updateAge(n *int) {
-	*n = 35
+func Greet(c chan string, d chan bool) {
+	name := <-c
+	fmt.Println("Hello ", name)
+	d <- true
+
 }
 
 func main() {
-	age := 21
-	updateAge(&age)
+	c := make(chan string)
+	done := make(chan bool)
 
-	fmt.Println(age)
+	go Greet(c, done)
+
+	c <- "Hashin"
+	<-done
+	close(c)
 }
