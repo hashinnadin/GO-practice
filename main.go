@@ -296,10 +296,18 @@ func (s Student) Greet() {
 
 func main() {
 
-	s1 := Student{
-		Name: "Hashin",
-		Age:  21,
-		Mark: 100,
+	persons := []Student{
+		{
+			Name: "Hashin",
+			Age:  21,
+		},
+		{
+			Name: "Rahul",
+			Age:  22,
+		},
 	}
-	s1.Greet()
+
+	for _, p := range persons {
+		p.Greet()
+	}
 }
