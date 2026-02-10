@@ -134,17 +134,172 @@
 // 	}
 // }
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	students := map[int]string{
+// 		1: "HAshin",
+// 		2: "rahul",
+// 		3: "mahul",
+// 	}
+// 	for i, name := range students {
+// 		fmt.Println("Roll :", i, "Name :", name)
+// 	}
+// }
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	slice := []int{1, 2, 3, 4, 5, 6}
+
+// 	// fmt.Println(len(slice))
+// 	// fmt.Println(cap(slice))
+// 	slice = append(slice, 40, 50)
+// 	// fmt.Println(slice)
+
+// 	max := slice[0]
+
+// 	for _, num := range slice {
+// 		if num > max {
+// 			max = num
+// 		}
+// 	}
+// 	fmt.Println(max)
+// }
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	students := map[int]string{
+// 		1: "Hashin",
+// 		2: "Hanan",
+// 		3: "Shahin",
+// 		4: "Manhar",
+// 		5: "Nabeel",
+// 	}
+
+// 	students[8] = "Halo"
+// 	students[2] = "Shanu"
+
+// 	name := students[1]
+// 	fmt.Println(name)
+
+// 	value, key := students[4]
+// 	delete(students, 3)
+
+// 	if key {
+// 		fmt.Println("Found :", value)
+// 	} else {
+// 		fmt.Println("Not found the value")
+// 	}
+
+// 	for _, value := range students {
+// 		fmt.Println(value)
+// 	}
+
+// 	fmt.Println(students)
+// }
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	type Student struct {
+// 		Name string
+// 		Age  int
+// 		Mark int
+// 	}
+
+// 	s1 := Student{
+// 		Name: "Hashin",
+// 		Age:  21,
+// 		Mark: 100,
+// 	}
+
+// 	s2 := Student{
+// 		Name: "salman",
+// 		Age:  12,
+// 		Mark: 95,
+// 	}
+// 	fmt.Println(s2)
+// 	fmt.Println(s1.Name)
+// 	fmt.Println(s1.Age)
+// 	fmt.Println(s1.Mark)
+// }
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	var Car struct {
+// 		id   int
+// 		name string
+// 	}
+
+// 	Car.id = 1
+// 	Car.name = "BMW"
+// 	fmt.Println(Car)
+// 	fmt.Println(Car.id)
+// }
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	type Menu struct {
+// 		name  string
+// 		price map[string]float32
+// 	}
+
+// 	snacks := []Menu{
+// 		{
+// 			name: "Coffee",
+// 			price: map[string]float32{
+// 				"regular": 23.65,
+// 				"Large":   34.5,
+// 			},
+// 		},
+// 		{
+// 			name: "Tea",
+// 			price: map[string]float32{
+// 				"Regular": 12.5,
+// 				"Large":   20.5,
+// 			},
+// 		},
+// 	}
+// 	fmt.Println(snacks)
+// }
+
 package main
 
 import "fmt"
 
+type Student struct {
+	Name string
+	Age  int
+	Mark int
+}
+
+func (s Student) Greet() {
+	fmt.Println("Hello my name is", s.Name)
+	fmt.Println("My age is", s.Age)
+}
+
 func main() {
-	students := map[int]string{
-		1: "HAshin",
-		2: "rahul",
-		3: "mahul",
+
+	s1 := Student{
+		Name: "Hashin",
+		Age:  21,
+		Mark: 100,
 	}
-	for i, name := range students {
-		fmt.Println("Roll :", i, "Name :", name)
-	}
+	s1.Greet()
 }
