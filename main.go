@@ -314,23 +314,59 @@
 
 // struct simple example
 
+// package main
+
+// import "fmt"
+
+// type Student struct {
+// 	name string
+// 	age  int
+// }
+
+// func (s Student) Hello() {
+// 	fmt.Println("My name is ", s.name)
+// 	fmt.Println("My age is ", s.age)
+// }
+// func main() {
+// 	s1 := Student{
+// 		name: "Hashin",
+// 		age:  21,
+// 	}
+// 	s1.Hello()
+// }
+
 package main
 
 import "fmt"
 
-type Student struct {
-	name string
-	age  int
+type Driver interface {
+	Drive()
 }
 
-func (s Student) Hello() {
-	fmt.Println("My name is ", s.name)
-	fmt.Println("My age is ", s.age)
+type Person1 struct {
+	Name string
+}
+
+func (s Person1) Drive() {
+	fmt.Println(s.Name, "You can Drive car")
+}
+
+type persons2 struct {
+	Name string
+}
+
+func (s persons2) Drive() {
+	fmt.Println(s.Name, "You can Drive Car")
+}
+
+func useDriver(d Driver) {
+	d.Drive()
 }
 func main() {
-	s1 := Student{
-		name: "Hashin",
-		age:  21,
-	}
-	s1.Hello()
+
+	s := Person1{Name: "Hashin"}
+	p := persons2{Name: "Salman"}
+
+	useDriver(s)
+	useDriver(p)
 }
