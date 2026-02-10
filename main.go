@@ -335,38 +335,76 @@
 // 	s1.Hello()
 // }
 
+// package main
+
+// import "fmt"
+
+// type Driver interface {
+// 	Drive()
+// }
+
+// type Person1 struct {
+// 	Name string
+// }
+
+// func (s Person1) Drive() {
+// 	fmt.Println(s.Name, "You can Drive car")
+// }
+
+// type persons2 struct {
+// 	Name string
+// }
+
+// func (s persons2) Drive() {
+// 	fmt.Println(s.Name, "You can Drive Car")
+// }
+
+// func useDriver(d Driver) {
+// 	d.Drive()
+// }
+// func main() {
+
+// 	s := Person1{Name: "Hashin"}
+// 	p := persons2{Name: "Salman"}
+
+// 	useDriver(s)
+// 	useDriver(p)
+// }
+
+// package main
+
+// import "fmt"
+
+// type Student struct {
+// 	Name string
+// 	Age  int
+// }
+
+// func updateAge(s *Student) {
+// 	s.Age = 30
+// }
+
+// func main() {
+// 	stu := Student{
+// 		Name: "Hashin",
+// 		Age:  21,
+// 	}
+
+// 	updateAge(&stu)
+// 	fmt.Println(stu.Age)
+// 	fmt.Println(stu)
+// }
+
 package main
 
 import "fmt"
 
-type Driver interface {
-	Drive()
+func change(x *int) {
+	*x = 20
 }
 
-type Person1 struct {
-	Name string
-}
-
-func (s Person1) Drive() {
-	fmt.Println(s.Name, "You can Drive car")
-}
-
-type persons2 struct {
-	Name string
-}
-
-func (s persons2) Drive() {
-	fmt.Println(s.Name, "You can Drive Car")
-}
-
-func useDriver(d Driver) {
-	d.Drive()
-}
 func main() {
-
-	s := Person1{Name: "Hashin"}
-	p := persons2{Name: "Salman"}
-
-	useDriver(s)
-	useDriver(p)
+	a := 10
+	change(&a)
+	fmt.Println(a)
 }
