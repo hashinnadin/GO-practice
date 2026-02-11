@@ -686,19 +686,33 @@
 // 	fmt.Println(arr)
 // }
 
+// package main
+
+// import "fmt"
+
+// func max[T int | float64](a T, b T) T {
+// 	if a > b {
+// 		return a
+// 	} else {
+// 		return b
+// 	}
+
+// }
+// func main() {
+// 	fmt.Println(max(4, 2))
+// 	fmt.Println(max(2.4, 4.4))
+// }
+
 package main
 
 import "fmt"
 
-func max[T int | float64](a T, b T) T {
-	if a > b {
-		return a
-	} else {
-		return b
+func printSlice[T any](items []T) {
+	for _, v := range items {
+		fmt.Println(v)
 	}
-
 }
 func main() {
-	fmt.Println(max(4, 2))
-	fmt.Println(max(2.4, 4.4))
+	printSlice([]int{1, 2, 3, 4, 55, 6, 7})
+	printSlice([]string{"hy", "Hello"})
 }
