@@ -675,13 +675,30 @@
 
 // }
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	arr := make([]int, 0, 3)
+// 	fmt.Println(cap(arr))
+// 	arr = append(arr, 1, 2, 3, 4, 5, 6, 7, 89, 9, 9, 2, 3, 4, 5)
+// 	fmt.Println(arr)
+// }
+
 package main
 
 import "fmt"
 
+func max[T int | float64](a T, b T) T {
+	if a > b {
+		return a
+	} else {
+		return b
+	}
+
+}
 func main() {
-	arr := make([]int, 0, 3)
-	fmt.Println(cap(arr))
-	arr = append(arr, 1, 2, 3, 4, 5, 6, 7, 89, 9, 9, 2, 3, 4, 5)
-	fmt.Println(arr)
+	fmt.Println(max(4, 2))
+	fmt.Println(max(2.4, 4.4))
 }
