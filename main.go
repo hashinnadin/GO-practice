@@ -576,29 +576,101 @@
 // 	vg.Wait()
 // }
 
+// package main
+
+// import (
+// 	"fmt"
+// 	"sync"
+// )
+
+// func task1(wg *sync.WaitGroup) {
+
+// 	fmt.Println("Hello")
+// 	fmt.Println("Task A Completed")
+// 	wg.Done()
+// 	wg.Done()
+// }
+
+// func main() {
+
+// 	var wg sync.WaitGroup
+
+// 	wg.Add(2)
+// 	fmt.Println("hyy")
+// 	go task1(&wg)
+
+// 	wg.Wait()
+// 	fmt.Println("Main exit")
+// }
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	marks := 33
+
+// 	switch {
+// 	case marks >= 90:
+// 		fmt.Println("A Grade")
+
+// 	case marks >= 75:
+// 		fmt.Println("B Grade")
+// 	case marks >= 45:
+// 		fmt.Println("c grade")
+// 	default:
+// 		fmt.Println("Failed")
+// 	}
+// }
+
+// package main
+
+// import (
+// 	"errors"
+// 	"fmt"
+// )
+
+// func main() {
+
+// 	num, num2 := 0, 2
+// 	err := errors.New("Invalid input")
+
+// 	if num == 0 {
+// 		fmt.Println("Error :", err)
+// 	} else {
+// 		fmt.Println("Result :", num%num2)
+// 	}
+// }
+
 package main
 
-import (
-	"fmt"
-	"sync"
-)
-
-func task1(wg *sync.WaitGroup) {
-
-	fmt.Println("Hello")
-	fmt.Println("Task A Completed")
-	wg.Done()
-	wg.Done()
-}
+import "fmt"
 
 func main() {
+	var choice int
 
-	var wg sync.WaitGroup
+	fmt.Println("///Menu////")
+	fmt.Println("1. Say Hello")
+	fmt.Println("2. Add number")
+	fmt.Println("3. Say")
+	fmt.Println("4. hyy")
+	fmt.Print("Enter A choice")
+	fmt.Scanln(&choice)
 
-	wg.Add(2)
-	fmt.Println("hyy")
-	go task1(&wg)
+	switch choice {
+	case 1:
+		fmt.Println("Hello How are you")
+	case 2:
+		var a, b int
+		fmt.Print("Enter First Number  :")
+		fmt.Scanln(&a)
+		fmt.Print("Enter Second Number :")
+		fmt.Scanln(&b)
+		fmt.Println("Result :", a+b)
+	case 3:
+		fmt.Println("Good Morning")
+	case 4:
+		fmt.Println("Exit the program")
+	}
 
-	wg.Wait()
-	fmt.Println("Main exit")
 }
