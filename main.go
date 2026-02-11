@@ -456,24 +456,149 @@
 // 	fmt.Println(age)
 // }
 
+// package main
+
+// import "fmt"
+
+// func Greet(c chan string, d chan bool) {
+// 	name := <-c
+// 	fmt.Println("Hello ", name)
+// 	d <- true
+
+// }
+
+// func main() {
+// 	c := make(chan string)
+// 	done := make(chan bool)
+
+// 	go Greet(c, done)
+
+// 	c <- "Hashin"
+// 	<-done
+// 	close(c)
+// }
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"time"
+// )
+
+// func main() {
+// 	ch1 := make(chan string)
+// 	ch2 := make(chan string)
+
+// 	go func() {
+// 		ch1 <- "Hello"
+// 	}()
+
+// 	go func() {
+// 		ch2 <- "Hy"
+// 	}()
+
+// 	select {
+// 	case value1 := <-ch1:
+// 		time.Sleep(1 * time.Second)
+
+// 		fmt.Println("Receved", value1)
+
+// 	case msg2 := <-ch2:
+// 		time.Sleep(1 * time.Second)
+
+// 		fmt.Println("Receved :", msg2)
+// 	}
+// }
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"sync"
+// )
+
+// var count = 0
+// var mu sync.Mutex
+
+// func increment() {
+// 	mu.Lock()
+// 	count++
+// 	mu.Unlock()
+// }
+
+// func main() {
+// 	var vg sync.WaitGroup
+
+// 	for i := 0; i < 1000; i++ {
+// 		vg.Add(1)
+// 		go func() {
+// 			increment()
+// 			vg.Done()
+// 		}()
+
+// 		// fmt.Println(i)
+// 	}
+// 	vg.Wait()
+// 	fmt.Println(count)
+// }
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"sync"
+// )
+
+// func printeven(vg *sync.WaitGroup) {
+// 	defer vg.Done()
+// 	for i := 1; i <= 10; i++ {
+// 		if i%2 == 0 {
+// 			fmt.Println("Even", i)
+// 		}
+// 	}
+// }
+
+// func printOdd(vg *sync.WaitGroup) {
+// 	defer vg.Done()
+// 	for i := 1; i <= 10; i++ {
+// 		if i%2 != 0 {
+// 			fmt.Println("Odd :", i)
+// 		}
+// 	}
+// }
+
+// func main() {
+// 	var vg sync.WaitGroup
+// 	vg.Add(2)
+
+// 	go printeven(&vg)
+// 	go printOdd(&vg)
+// 	vg.Wait()
+// }
+
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
-func Greet(c chan string, d chan bool) {
-	name := <-c
-	fmt.Println("Hello ", name)
-	d <- true
+func task1(wg *sync.WaitGroup) {
 
+	fmt.Println("Hello")
+	fmt.Println("Task A Completed")
+	wg.Done()
+	wg.Done()
 }
 
 func main() {
-	c := make(chan string)
-	done := make(chan bool)
 
-	go Greet(c, done)
+	var wg sync.WaitGroup
 
-	c <- "Hashin"
-	<-done
-	close(c)
+	wg.Add(2)
+	fmt.Println("hyy")
+	go task1(&wg)
+
+	wg.Wait()
+	fmt.Println("Main exit")
 }
