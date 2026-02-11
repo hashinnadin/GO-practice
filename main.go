@@ -642,35 +642,46 @@
 // 	}
 // }
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	var choice int
+
+// 	fmt.Println("///Menu////")
+// 	fmt.Println("1. Say Hello")
+// 	fmt.Println("2. Add number")
+// 	fmt.Println("3. Say")
+// 	fmt.Println("4. hyy")
+// 	fmt.Print("Enter A choice")
+// 	fmt.Scanln(&choice)
+
+// 	switch choice {
+// 	case 1:
+// 		fmt.Println("Hello How are you")
+// 	case 2:
+// 		var a, b int
+// 		fmt.Print("Enter First Number  :")
+// 		fmt.Scanln(&a)
+// 		fmt.Print("Enter Second Number :")
+// 		fmt.Scanln(&b)
+// 		fmt.Println("Result :", a+b)
+// 	case 3:
+// 		fmt.Println("Good Morning")
+// 	case 4:
+// 		fmt.Println("Exit the program")
+// 	}
+
+// }
+
 package main
 
 import "fmt"
 
 func main() {
-	var choice int
-
-	fmt.Println("///Menu////")
-	fmt.Println("1. Say Hello")
-	fmt.Println("2. Add number")
-	fmt.Println("3. Say")
-	fmt.Println("4. hyy")
-	fmt.Print("Enter A choice")
-	fmt.Scanln(&choice)
-
-	switch choice {
-	case 1:
-		fmt.Println("Hello How are you")
-	case 2:
-		var a, b int
-		fmt.Print("Enter First Number  :")
-		fmt.Scanln(&a)
-		fmt.Print("Enter Second Number :")
-		fmt.Scanln(&b)
-		fmt.Println("Result :", a+b)
-	case 3:
-		fmt.Println("Good Morning")
-	case 4:
-		fmt.Println("Exit the program")
-	}
-
+	arr := make([]int, 0, 3)
+	fmt.Println(cap(arr))
+	arr = append(arr, 1, 2, 3, 4, 5, 6, 7, 89, 9, 9, 2, 3, 4, 5)
+	fmt.Println(arr)
 }
