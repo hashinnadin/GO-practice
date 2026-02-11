@@ -703,16 +703,31 @@
 // 	fmt.Println(max(2.4, 4.4))
 // }
 
+// package main
+
+// import "fmt"
+
+// func printSlice[T any](items []T) {
+// 	for _, v := range items {
+// 		fmt.Println(v)
+// 	}
+// }
+// func main() {
+// 	printSlice([]int{1, 2, 3, 4, 55, 6, 7})
+// 	printSlice([]string{"hy", "Hello"})
+// }
+
 package main
 
 import "fmt"
 
-func printSlice[T any](items []T) {
-	for _, v := range items {
-		fmt.Println(v)
-	}
+type Box[T any] struct {
+	Value T
 }
+
 func main() {
-	printSlice([]int{1, 2, 3, 4, 55, 6, 7})
-	printSlice([]string{"hy", "Hello"})
+	b1 := Box[int]{Value: 23}
+	b2 := Box[string]{Value: "Hyy"}
+
+	fmt.Println(b1, b2)
 }
