@@ -717,17 +717,66 @@
 // 	printSlice([]string{"hy", "Hello"})
 // }
 
+// package main
+
+// import "fmt"
+
+// type Box[T any] struct {
+// 	Value T
+// }
+
+// func main() {
+// 	b1 := Box[int]{Value: 23}
+// 	b2 := Box[string]{Value: "Hyy"}
+
+// 	fmt.Println(b1, b2)
+// }
+
+// package main
+
+// import "fmt"
+
+// type Product struct {
+// 	Name  string
+// 	Price float64
+// }
+
+// func (p Product) discount() float64 {
+// 	return p.Price * 0.9
+// }
+
+// func main() {
+// 	car1 := Product{
+// 		Name:  "cake",
+// 		Price: 1500,
+// 	}
+// 	discontedPrice := car1.discount()
+// 	fmt.Println(discontedPrice)
+// }
+
 package main
 
 import "fmt"
 
-type Box[T any] struct {
-	Value T
+type Shape interface {
+	Area() float64
+}
+
+type rectangle struct {
+	Width float64
+	Hiegt float64
+}
+
+func (r rectangle) Area() float64 {
+	return r.Width * r.Hiegt
 }
 
 func main() {
-	b1 := Box[int]{Value: 23}
-	b2 := Box[string]{Value: "Hyy"}
-
-	fmt.Println(b1, b2)
+	var s Shape
+	rect := rectangle{
+		Width: 53,
+		Hiegt: 32,
+	}
+	s = rect
+	fmt.Println("Area :", s.Area())
 }
